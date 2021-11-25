@@ -6,26 +6,26 @@
          :transform="`translate(${translate.x},${translate.y}) scale(${scale})`"
         >
       
-        <Link v-for="(link,index) in tree.links" :key="index"
-          :pathFunc="pathFunc"
-          :orientation="orientation"
-          :linkData="link"
-          :nodeSize="nodeSize"
-          :transitionDuration="transitionDuration"
-          :deepFactor="deepFactor"
-        />
-
-        <Node v-for="node in tree.nodes" :key="node.data.id"
-            :nodeData="node"
+            <Link v-for="(link,index) in tree.links" :key="index"
+            :pathFunc="pathFunc"
+            :orientation="orientation"
+            :linkData="link"
             :nodeSize="nodeSize"
             :transitionDuration="transitionDuration"
-            :orientation="orientation"
-            :nodeSvgShape="nodeSvgShape"
-            :nodeSvgShapeAttr="nodeSvgShapeAttr"
-            :allowForeignObjects="allowForeignObjects"
-            :renderForeignObjects="renderForeignObjects"
-            @handleNodeToggle="handleNodeToggle"
-        />
+            :deepFactor="deepFactor"
+            />
+
+            <Node v-for="node in tree.nodes" :key="node.data.id"
+                :nodeData="node"
+                :nodeSize="nodeSize"
+                :transitionDuration="transitionDuration"
+                :orientation="orientation"
+                :nodeSvgShape="nodeSvgShape"
+                :nodeSvgShapeAttr="nodeSvgShapeAttr"
+                :allowForeignObjects="allowForeignObjects"
+                :renderForeignObjects="renderForeignObjects"
+                @handleNodeToggle="handleNodeToggle"
+            />
         </g>
       </transition>
     </svg>

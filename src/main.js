@@ -17,9 +17,6 @@ import 'font-awesome/css/font-awesome.css'
 import './assets/css/base.scss';
 import './assets/css/global.scss';
 
-import VueTree from '@ssthouse/vue-tree-chart'
-Vue.component('vue-tree', VueTree)
-
 import {
     Pagination,
     Button, 

@@ -24,7 +24,7 @@
   </div>
 </template>
 <style lang="scss">
- @import "../../assets/css/tree"; 
+@import "../../assets/css/tree"; 
     
 </style>
 <script>
@@ -80,11 +80,12 @@ export default {
     },
   methods: {
     setTreeCenter() {
-      const dimensions = this.$refs.treeContainer.$el.getBoundingClientRect();
-      this.translate = {
-        x: 200,
-        y: dimensions.height / 2
-      };
+        const dimensions = this.$refs.treeContainer.$el.getBoundingClientRect();
+        //移动未知
+        this.translate = {
+            x: 200,
+            y: dimensions.height / 2
+        };
     },
     handleClick(scope) {
       console.log(scope);
