@@ -2,24 +2,23 @@
   <div class="tree-progress">
       <Tree 
         ref="treeContainer"
-        :nodeSize="{x:240,y:80}"
+        :nodeSize="{x:190,y:38}"
         :initData="data"
         :translate="translate"
         pathFunc="fish"
       >
-      <template slot-scope="scope">
-        <template v-if="scope.depth === 0">
-            <div class="base-node salad-root">
-              <p>{{scope.data.name}}</p>
+        <template slot-scope="scope">
+            <template v-if="scope.depth === 0">
+                <div class="base-node salad-root">
+                <p>{{scope.data.name}}</p>
+                </div>
+            </template>
+            <template v-else>
+            <div class="base-node salad" @click="handleClick(scope)">
+                <p>{{scope.data.name}}</p>
             </div>
+            </template>
         </template>
-        <template v-else>
-          <div class="base-node salad" @click="handleClick(scope)">
-            <p>{{scope.data.name}}</p>
-          </div>
-        </template>
-
-      </template>
       </Tree>
   </div>
 </template>
@@ -67,6 +66,30 @@ export default {
                     name: '水浒传',
 
                 },
+                {
+                    name: '水浒传',
+
+                },
+                {
+                    name: '水浒传',
+
+                },
+                {
+                    name: '水浒传',
+
+                },
+                {
+                    name: '水浒传',
+
+                },
+                {
+                    name: '水浒传',
+
+                },
+                {
+                    name: '水浒传',
+
+                },
             ]}, 
         ],
         translate: {
@@ -90,11 +113,13 @@ export default {
     handleClick(scope) {
       console.log(scope);
     },
-    pathFunc(linkData, start, end) {
-      return "M" + end.x + "," + end.y + " " + start.x + "," + start.y;
-    }
+    // pathFunc(linkData, start, end) {
+    //   return "M" + end.x + "," + end.y + " " + start.x + "," + start.y;
+    // }
   },
   mounted(){
+      Object.assign(this.$data, this.$options.data.call(this));
+      console.log(this.data);
     this.setTreeCenter();
   }
 };

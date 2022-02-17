@@ -32,6 +32,8 @@ export default {
   computed: {
     startPoint() {
       const d = this.linkData;
+      console.log(this.linkData)
+      console.log(this.nodeSize)
       let start = {};
       if (this.orientation === "horizontal") {
         start = {

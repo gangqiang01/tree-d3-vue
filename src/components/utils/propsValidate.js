@@ -9,6 +9,7 @@ export const treeProps = {
             type: Array,
             required: true
         },
+        //拓扑图的方向
         orientation: {
             type: String,
             default: 'horizontal',
@@ -17,13 +18,15 @@ export const treeProps = {
                 return oneOf(value, ['horizontal', 'vertical'])
             }
         },
+        // 是否收缩
         collapsible: {
             type: Boolean,
             default: true
-        },        
+        }, 
+        //调节父node和子node的距离       
         deepFactor: {
           type: Number,
-          default: 0.65
+          default: 0.85
         },
         nodeSvgShape: {
             type: String,
@@ -44,17 +47,18 @@ export const treeProps = {
             type: Object,
             default () {
                 return {
-                    x: 200,
-                    y: 80
+                    x: 182,
+                    y: 32
                 }
             }
         },
+        //node之间的距离
         separation: {
             type: Object,
             default () {
                 return {
-                    siblings: 1.2,
-                    nonSiblings: 1.2
+                    siblings: 1.5,
+                    nonSiblings: 1.5
                 }
             }
         },

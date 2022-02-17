@@ -10,11 +10,11 @@ export default {
      */
     created() {
         if (this.$$tree.$scopedSlots) {
-          const $node = this.$options.parent
-          const nodeData = $node.$options.propsData.nodeData
-          this.$options.render = h => h('div', [
-            this.$$tree.$scopedSlots.default(nodeData)
-          ])
+            const $node = this.$options.parent
+            const nodeData = $node.$options.propsData.nodeData
+            this.$options.render = h => h('div', [
+                this.$$tree.$scopedSlots.default(nodeData)
+            ])
         }
     }
 }
