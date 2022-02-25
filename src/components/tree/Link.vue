@@ -153,7 +153,9 @@ export default {
     },
     // diagonal
     diagonal() {
-      const path =
+        let path = "";
+        if(this.orientation === "vertical"){
+            path =
         "M" +
         this.endPoint.x +
         "," +
@@ -170,7 +172,28 @@ export default {
         this.startPoint.x +
         "," +
         this.startPoint.y;
-      return path;
+        }
+
+        if (this.orientation === "horizontal") {
+            path =
+            "M" +
+            this.endPoint.x +
+            "," +
+            this.endPoint.y +
+            "C" +
+            (this.endPoint.x + this.startPoint.x) / 2  +
+            "," +
+            this.endPoint.y+
+            " " +
+            (this.endPoint.x + this.startPoint.x) / 2 +
+            "," +
+            this.startPoint.y+
+            " " +
+            this.startPoint.x +
+            "," +
+            this.startPoint.y;
+        }
+        return path;
     },
     linkPath() {
       if(typeOf(this.pathFunc) === 'string'){
