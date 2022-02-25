@@ -26,7 +26,7 @@ export const treeProps = {
         //调节父node和子node的距离       
         deepFactor: {
           type: Number,
-          default: 0.85
+          default: 0.65
         },
         nodeSvgShape: {
             type: String,

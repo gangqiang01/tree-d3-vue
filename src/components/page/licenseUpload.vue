@@ -5,19 +5,21 @@
         :nodeSize="{x:190,y:38}"
         :initData="data"
         :translate="translate"
-        pathFunc="fish"
+        pathFunc="diagonal"
       >
         <template slot-scope="scope">
-            <template v-if="scope.depth === 0">
-                <div class="base-node salad-root">
-                <p>{{scope.data.name}}</p>
-                </div>
-            </template>
-            <template v-else>
-            <div class="base-node salad" @click="handleClick(scope)">
-                <p>{{scope.data.name}}</p>
+            <div class="base-node salad-root" v-if="scope.depth === 0">
+                <span  class="nodeLeft">
+                    <i class="fa fa-cubes"></i>
+                </span>
+                <span>{{scope.data.name}}</span>
             </div>
-            </template>
+            <div class="base-node salad" @click="handleClick(scope)" v-else>
+                <span  class="nodeLeft">
+                    <i class="fa fa-cubes"></i>
+                </span>
+                <span>{{scope.data.name}}</span>
+            </div>
         </template>
       </Tree>
   </div>
@@ -34,60 +36,72 @@ export default {
     return {
         data: [{
             name: '四大名著',
+            type: "root",
             children: [
                 {
                     name: '红楼梦',
                     children: [{
                         name: '贾宝玉',
+                        type: 'property'
                     },
                     {
                         name: '林黛玉',
+                        type: 'property'
                     },
                     {
                         name: '薛宝钗',
+                        type: 'property'
                     }]
                 },
                 {
                     name: '西游记',
+                    type: 'property',
                     children: [{
                         name: '唐僧',
+                        type: 'property'
                     },
                     {
                         name: '孙悟空',
-                    },
-                    {
-                        name: '八戒',
+                        type: 'property'
                     }]
                 },
                 {
                     name: '三国演义',
+                    type: 'property'
                 },
                 {
                     name: '水浒传',
+                    type: 'property'
 
                 },
                 {
                     name: '水浒传',
+                    type: 'property'
 
                 },
                 {
                     name: '水浒传',
+                    type: 'property'
 
                 },
                 {
                     name: '水浒传',
+                    type: 'property'
 
                 },
                 {
                     name: '水浒传',
+                    type: 'property'
 
                 },
                 {
                     name: '水浒传',
+                    type: 'property'
 
                 },
                 {
                     name: '水浒传',
+                    type: 'property'
 
                 },
             ]}, 
